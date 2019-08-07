@@ -1,0 +1,44 @@
+khởi động git:
+git init
+dùng git bash, mở git bash ở file mà bạn init git
+để xem list file, gõ ls, xem file ẩn gõ ls -al
+
+4 lệnh đầu tiên
+git init
+git status
+git add
+git comit
+
+- git status, báo cho bạn nếu có 1 file mới
+nó báo: onbranch master và no comits yet
+
+file màu đỏ là file mới tạo, bạn chưa track, chưa theo dõi file đó
+sau khi bạn add bằng git add thì file đó sẽ chuyển thành màu xanh, hiển thị là newfile: tên file
+giải thích thêm, file màu đỏ là file mới tạo ra và chưa đc check, và nếu dùng git add thì nó sẽ chuyển thành màu xanh
+
+lệnh git commit: đóng gói các thằng màu xanh lại thành 1 hộp
+và gán cho nó 1 cái tem, syntax:
+git commit -m 'tên hộp' - vỏ hộp, thường là ghi mục đích
+
+ở lần đầu tiên chắc chắn bạn chưa commit được vì git mới cài, chưa được config, bạn làm theo hướng dẫn
+config --global user.email "" và config --global user.name ""
+
+sau đó thực hiện commit lại
+
+làm sao để biết cái nào đã commit rồi.
+vd, tạo 1 file cat.js, viết function
+giờ xem git status, à có file Cat js màu đỏ
+h giả sủ bạn viết xong file này rồi, let's add vào, rồi commit, vậy cho đến bây h bạn đã commit 2 lần, làm 
+thế nào để xem lại lịch sử những lần commit?
+2 LỆNH tiếp theo: git log và git show
+note: nếu bạn git status và có file thay đổi thất thường bạn
+sẽ biết ngay
+giờ thử git log: lịch sử các commit của bạn
+Những lần commit mới hơn sẽ được hiển thị lên đầu, các lần commit cũ hơn sẽ ở dưới, ngoài ra nó cho bạn chi tiết tên  người commit và thời gian, mọi thay đổi đều được thông báo, tên commit (thường là mục đích commit) cũng hiển thịư
+
+tiếp theo là git show, nhưng git show phải truyền id
+của commit, kiểu nếu muốn xem chi tiết thì dùng git show,
+ồ vậy là với git show, ta còn đọc được bên trong file được commit, à không, cho mình xem thay đổi, đoạn bị thay đổi
+
+để add tất cả ta dùng git add .
+
