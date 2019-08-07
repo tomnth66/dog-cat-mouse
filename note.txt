@@ -42,3 +42,13 @@ của commit, kiểu nếu muốn xem chi tiết thì dùng git show,
 
 để add tất cả ta dùng git add .
 
+chú ý là, khi sửa file, gõ git status ta sẽ thấy có modified: tên file vừa sửa --- màu đỏ chót, từ đó phát hiện ra file đã bị sửa hihi
+Lệnh tiếp theo: git diff - xem nội dung bị đổi những
+file bị modify
+mấy cái màu xanh là được thêm
+sau đó nhấn q để thoát chế độ ra
+
+chú ý là, để hiển thị 1 terminal mới đen hoàn toàn, dùng ctrl L, kiểu clear cho gọn, nhưng thực ra lịch sử các dòng vẫn ở trên đó,
+vậy là có modify, ta sẽ đọc modify, và nếu ta thấy ổn
+rồi, tức là đã hiểu modify là gì, mọi thứ ok, thì h ta
+sẽ commit, coi như là duyệt
