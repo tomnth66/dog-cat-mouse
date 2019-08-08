@@ -68,3 +68,60 @@ chú ý git diff để quan sát bạn đã thay đổi những gì, trong trư�
 
 1 file khi bị modify sẽ màu đỏ, sao khi add sẽ thành màu xanh
 khi đó, file đó được gọi là đang nằm trong staging area, chỉ những file trong staging area mới được commit
+
+sau khi commit, những thay đổi trong staging area sẽ được cho vào 1 nơi gọi là git repository, tưc là git repository lưu các thay đổi commit, muốn xem nó, ta đã biết, thì dùng git log, cách xem lịch sử commit trong cửa sổ riêng dùng gitk, nhưng khuyến khích không dùng, vì bản chất cái này là git show
+
+ok, 2 lệnh tiếp đây:
+git checkout, git reset, giờ thêm 1 file dog và thay đổi
+file cat, nó báo có 1 file bị thay đổi , đang tong staging
+và 1 file mới thêm vào, chưa nằm trong staging, 
+gõ git diff để xem thay đổi
+sau khi kiểm tra git status, có file bị modify và người ta baordungf git checkout -- tên file để bỏ file này đi, thử xem
+
+đến đây, bạn gõ git status sẽ thấy file note.txt đã bị mất khỏi working directory, tức là mất khỏi mục các file bị modify, và các bạn có để ý gì không, ở trong này bị mất đi 1 đoạn, đó chính là do checkout, lệnh checkout sẽ xoá bỏ thay đổi trong các file chưa được add và commit, vd bạn phát hiện ra file của bạn bị thay đổi ngoài ý muốn, bạn có thể dùng checkout, giờ giả sử bạn đã duyệt những thay đổi trong file
+note.txt, let's add nó vào nào
+oh noooooo, bạn đã nhầm, có vấn đề trong sự thay đôi ở file note, mà bạn lỡ add mất rồi, nooooo, vậy phải làm thế nào
+đó chính là lúc bạn dùng reset, syntax:
+git rest HEAD + tên file, thử xem, HEAD chắc là để reset cái
+đầu tiên, nếu có nhiều cái thì chọn thứ tự, đó
+file note lại vào working directory rồi, bị kick ra khỏi staging area rồi
+
+BÀI TIẾP THEO: branching and merging - tạp nhánh và ghép nhánh - nghe giống disjoint set nhỉ
+để bắt đầu, các bạn hãy gõ git branch
+bạn thấy nó trả về master, vậy master là gì??, đây là nhánh
+hiện tại bạn đang ở, đây là mạch chính, nhánh chính, đây là cái sẽ được deploy lên server, để ý rằng, các commit từ trước đến giờ đều thuộc nhánh master
+bây h ta sẽ tạo nhành mới, nhưng tạo nhánh mới để làm gì
+vd trang web của bạn có nhiều trang, thì thường với mỗi trang ta sẽ tạo 1 nhánh mới, và khi xong rồi, thì ta sẽ ghép các nhánh tạo ra vào nhánh master, để dễ quản lí, mỗi nhánh quản lí 1 page, tạo ra nhánh mới dùng
+git checkout -b + tên nhánh, h kiểm tra
+git branch bạn sẽ thấy, bạn đang ở branch feature/dog-class
+h ta commit dog.js vào nào, ta thử xem commit log
+
+LỆNH tạo nhánh - git checkout - b + tên nhánh
+
+chuyển nhánh làm việc
+git checkout + tên nhánh
+
+tạo nhánh để khi sửa, ta sửa nhánh, bây giờ ta muốn ghép nhánh, để kéo những thay đổi ở nhánh B vào nhánh A, gán B---> A syntax:
+git check out A
+git merge B, gán B vào A
+
+giờ các bạn hiểu thế này,
+giả sử master và feature/dog-class đều có file dog.js
+ta chuyển sang nhánh feature/dog-class và modify file dog.js, thì khi chuyển sang branch master, mọi thứ vẫn chưa được sửa, tức là nếu coi code trong branch master là bản chính thì nhánh kia có thể là 1 bản nháp cho bạn, vậy khi nháp ổn rồi thì bạn làm gì, bạn sẽ ghép nó vào, h ta thử ghép nào, nhớ muốn ghéo vào branch nào thì phả vào branch đó đã rồi merge branch cần sau
+
+
+cuối cùng là xoá bản nháp, xoá branch
+syntax: git branch -D tên branch
+
+BÀI TIẾP THEO: git reset xoá commit
+
+git reset --soft + id commit -> master mở các commit mới hơn commit i
+git reset --mixed
+git reset --hard
+
+
+Bài tiếp: git revert <commit> 
+chỉ xoá 1 commit cụ thể, xoá tất cả dòng thêm vào ở commit đó, nhưng khi xoá code thì khá nguy hiểm
+
+BÀI TIẾP: gitignore: bỏ qua 1 số file
+module chalk
