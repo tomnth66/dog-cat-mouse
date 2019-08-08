@@ -125,3 +125,20 @@ chỉ xoá 1 commit cụ thể, xoá tất cả dòng thêm vào ở commit đó
 
 BÀI TIẾP: gitignore: bỏ qua 1 số file
 module chalk
+
+VD file node module bạn không muốn commit
+dùng file .gitignore
+tất cả các file trong .gitignore sẽ ko xuất hiện trong git status, cũng sẽ không bị add, không bị commits,..., ta nên ignore khi chưa commit, những file thường ignore là file rất nặng, mà không dùng đến
+
+BÀI TIẾP: github
+mở github, tạo tài khoản, tạo 1 new repo
+điền thông tin rồi copy đường link
+vào git bash gõ
+git remote add origin + tên đường link
+vd: git remote add origin https://github.com/tomnth66/dog-cat-mouse.git
+sau đó gõ git remote -v để kiểm tra file
+
+thao tác push code: git push
+lần đầu tiên thực hiện phải là git push -u origin + tên branch muốn push lên
+
+từ lần 2 chỉ cần git push origin + branch

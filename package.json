@@ -1,0 +1,14 @@
+{
+  "name": "commit",
+  "version": "1.0.0",
+  "description": "thường mỗi project có 1 file Readme, để mô tả project này về cái gì, để làm gì, sẽ có gì...",
+  "main": "cat.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2"
+  }
+}
