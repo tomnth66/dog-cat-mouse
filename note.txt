@@ -52,3 +52,19 @@ chú ý là, để hiển thị 1 terminal mới đen hoàn toàn, dùng ctrl L,
 vậy là có modify, ta sẽ đọc modify, và nếu ta thấy ổn
 rồi, tức là đã hiểu modify là gì, mọi thứ ok, thì h ta
 sẽ commit, coi như là duyệt
+
+tổng kết:
+git log: danh sách commit
+git show + id commit -> chi tiết commit
+git diff, nội dung bị sửa của các file bị modidy
+
+
+tiếp theo - 3 thuật ngữ trong git 
+working directory - thư mục các bạn làm việc
+staging area
+git repository
+
+chú ý git diff để quan sát bạn đã thay đổi những gì, trong trường hợp cái thay đổi làm sai chương trình
+
+1 file khi bị modify sẽ màu đỏ, sao khi add sẽ thành màu xanh
+khi đó, file đó được gọi là đang nằm trong staging area, chỉ những file trong staging area mới được commit
